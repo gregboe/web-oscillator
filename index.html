@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8'" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Oscillator</title>
+        <!-- link to the p5 library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+        
+        <!-- styles -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="header"><h1>Oscillator</h1></div>
+        
+        <button class="playButton">play</button>
+        
+        <div class="oscillatorsContainer">
+            <label for="oscillators">Oscillator: </label>
+
+            <select name="oscillators" class="oscillators">
+                <option value="sine">sine</option>
+                <option value="triangle">triangle</option>
+                <option value="square">square</option>
+                <option value="sawtooth">sawtooth</option>
+            </select>
+        </div>
+
+        
+        <div class="volumeContainer">
+            <label for="amplitude">Amplitude: </label>
+            <input name="amplitude" type="range"  min="-60" max="0" value="-60" step="1" class="setVolume">
+        </div>
+
+        <div class="panContainer">
+            <label for="pan">Pan: </label>
+            <input name="pan" type="range"  min="-1" max="1" value="0" step=".01" class="setPan">
+        </div>
+
+        <div class="freqContainer">
+            <label for="freq">Frequency: </label>
+            <input name="freq" type="range"  min="0" max="1800" value="0" step="1" class="setFreq">
+        </div>
+
+
+    <script src="app.js"></script>
+    </body>
+</html>
