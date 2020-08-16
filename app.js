@@ -30,8 +30,10 @@ playButton.addEventListener('click', function() {
     //if sound is on, turn if off; if sound is off, turn it on.
     if (mrOscillator.started){
         mrOscillator.stop();
+        playButton.innerHTML = "Play"
     } else {
         mrOscillator.start();
+        playButton.innerHTML = "Stop"
     }
 });
 
