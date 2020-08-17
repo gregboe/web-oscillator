@@ -15,7 +15,7 @@ let fft;
 
 function setup() {
 
-    createCanvas(400, 200);
+    createCanvas(windowWidth, 400);
 
     // initialize p5 objects
     mrOscillator = new p5.Oscillator();
