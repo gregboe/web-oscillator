@@ -12,40 +12,46 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="header"><h1>Oscillator</h1></div>
+    <div class="container">
+
+        <header>
+            <h1>Oscillator</h1>
+        </header>
         
-        <button class="playButton">play</button>
-        
-        <div class="oscillatorsContainer">
-            <label for="oscillators">Oscillator: </label>
+        <div class="oscillator">
+            <button class="playButton btn">play</button>
+            
+            <div class="oscillatorsContainer">
+                <label for="oscillators">Oscillator: </label>
 
-            <select name="oscillators" class="oscillators">
-                <option value="sine">sine</option>
-                <option value="triangle">triangle</option>
-                <option value="square">square</option>
-                <option value="sawtooth">sawtooth</option>
-            </select>
-        </div>
+                <select name="oscillators" class="oscillators">
+                    <option value="sine">sine</option>
+                    <option value="triangle">triangle</option>
+                    <option value="square">square</option>
+                    <option value="sawtooth">sawtooth</option>
+                </select>
+            </div>
 
-        
-        <div class="volumeContainer">
-            <label for="amplitude">Amplitude: </label>
-            <input name="amplitude" type="range"  min="-60" max="0" value="-60" step="1" class="setVolume">
-        </div>
+            
+            <div class="volumeContainer">
+                <label for="amplitude">Amplitude: </label><br>
+                <input name="amplitude" type="range"  min="-60" max="0" value="-60" step="1" class="slider setVolume">
+            </div>
 
-        <div class="panContainer">
-            <label for="pan">Pan: </label>
-            <input name="pan" type="range"  min="-1" max="1" value="0" step=".01" class="setPan">
-        </div>
+            <div class="panContainer">
+                <label for="pan">Pan: </label><br>
+                <input name="pan" type="range"  min="-1" max="1" value="0" step=".01" class="slider setPan">
+            </div>
 
-        <div class="freqContainer">
-            <label for="freq">Frequency: </label>
-            <input name="freq" type="range"  min="0" max="1800" value="0" step="1" class="setFreq">
-        </div>
+            <div class="freqContainer">
+                <label for="freq">Frequency: </label><br>
+                <input name="freq" type="range"  min="0" max="1800" value="0" step="1" class="slider setFreq">
+            </div>
 
-        <div class="ffm">
-                <script src="app.js"></script>
+            <div class="ffm">
+                    <script src="app.js"></script>
+            </div>
         </div>
-    
+    </div>
     </body>
 </html>

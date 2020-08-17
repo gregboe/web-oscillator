@@ -23,7 +23,8 @@ function setup() {
     fft = new p5.FFT();
     
     //draw attributes
-    stroke('white');
+    fill('white');
+    noStroke();
 }
 
 playButton.addEventListener('click', function() {
@@ -81,10 +82,28 @@ function draw() {
     background(80);
 
     let spectrum = fft.analyze();
+    let wave = fft.waveform();
+
+    //connect the points
+    beginShape();
+    // create two vertices to fill from the bottom
+    vertex(0,height);
 
     for (let i=0; i<spectrum.length; i++){
-        point(map(log(i),0, log(spectrum.length), 0, width),map(spectrum[i], 0, 255, height, 0));
+        vertex(map(log(i),0, log(spectrum.length), 0, width),map(spectrum[i], 0, 255, height, 0));
     }
+    vertex(width, height)
+    endShape();
+
+    beginShape();
+    stroke('white')
+    for (let j=0; j < wave.length; j++) {
+        let x = map(j, 0, wave.length, 0, width);
+        let y = map(wave[j], -1, 1, 0, height);
+        point(x,y)
+    }
+    endShape();
+
 }
 
 function touchStarted() {
